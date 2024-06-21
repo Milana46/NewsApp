@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/headlineFragment">
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.mynews2.ui.fragments.articleFragment"
+        android:label="articleFragment">
+
+        <argument
+            android:name="article"
+            android:argType="com.example.mynews2.Article"/>
+    </fragment >
+
+
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.mynews2.ui.fragments.favoritesFragment"
+        android:label="favoritesFragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_newsActivity"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/headlineFragment"
+        android:name="com.example.mynews2.ui.fragments.headlineFragment"
+        android:label="headlineFragment" >
+        <action
+            android:id="@+id/action_headlineFragment_to_newsActivity_to_newsActivity"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchjFragment"
+        android:name="com.example.mynews2.ui.fragments.searchFragment"
+        android:label="searchFragment" >
+        <action
+            android:id="@+id/action_articleFragment_to_newsActivity"
+            app:destination="@id/articleFragment" />
+    </fragment>
+</navigation>
